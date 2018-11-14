@@ -1,0 +1,51 @@
+
+public class AnimalCounterApp {
+	
+public static void main(String[] args) throws CloneNotSupportedException {
+        
+	
+	    System.out.println("Counting alligators..." + "\n");
+	    Alligator Alligator1 = new Alligator();
+	    // resetting the counter
+	    Alligator1.resetCount();
+	    // counting Alligator two times
+        count(Alligator1,2);
+    
+        System.out.println();
+	    
+		System.out.println("Counting sheep..." + "\n");
+		Sheep sheep1 = new Sheep();
+		// resetting the counter
+		sheep1.resetCount();
+		// assigning the name to first sheep
+		sheep1.setName("Blackie");
+		// counting sheep1 two times
+        count(sheep1,2);
+        
+        System.out.println();
+        
+        // cloning a sheep object from sheep1
+        Sheep sheep2 = (Sheep) sheep1.clone();
+        // resetting the counter for sheep2
+        sheep2.resetCount();
+        // assigning new name to sheep2
+        sheep2.setName("Dolly");
+        // counting sheep2 three times
+        count(sheep2,3);
+      
+        System.out.println();
+        
+        // resetting the counter for sheep1
+        sheep1.resetCount();
+        // counting sheep1 one time
+        count(sheep1,1);
+	}
+	
+	public static void count(Countable c, int maxCount) {
+		for(int i = 0; i  <maxCount; i++) {
+			c.incrementCount();
+			System.out.println(c.getCountString());
+		}
+	}
+
+}
