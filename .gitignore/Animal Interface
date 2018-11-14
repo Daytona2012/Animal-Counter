@@ -1,0 +1,25 @@
+
+
+public abstract class Animal implements Countable {
+
+	private int animalCount;
+	
+	@Override
+	public void incrementCount() {
+    	animalCount++;
+    }
+	
+	@Override
+	public void resetCount() {
+		animalCount = 0;
+	}
+	@Override
+	public int getCount() {
+		return animalCount;
+	}
+	
+	@Override
+	public String getCountString() {
+	   return animalCount + " Animal";
+	}
+}
